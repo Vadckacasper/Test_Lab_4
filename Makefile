@@ -84,7 +84,8 @@ build/src/print_posle_prov.o: src/print_posle_prov.c src/geometry.h src/figure.h
 
 
 bin/geometry-test: build/test/test.o build/test/circle_intersects.o build/test/printCircle.o build/test/printPoligon.o build/test/printTriangle.o 
-build/test/proverka.o  build/src/input_data.o build/test/areCollinear.o build/test/getMin.o
+build/test/proverka.o  build/src/input_data.o build/test/areCollinear.o build/test/getMin.o build/test/getMax.o build/test/prijectionsIntersect.o build/test/getSlope.o 
+build/test/getYIntercept.o build/test/getCos.o
 	g++ $(CFLAGS) -I thirtdparty/catch2  $^ -o $@
 
 build/test/test.o: test/test.c test/geometry.h test/figure.h 
@@ -113,6 +114,10 @@ build/test/areCollinear.o: test/areCollinear-test.c test/geometry.h test/figure.
 
 build/test/getMin.o: test/getMin-test.c test/geometry.h test/figure.h 
 	$(TEST)
+
+build/test/getMax.o: test/getMax-test.c test/geometry.h test/figure.h
+	$(TEST)
+
 
 
 clean:
