@@ -82,7 +82,15 @@ build/src/prov_data.o: src/prov_data.c src/geometry.h src/figure.h
 build/src/print_posle_prov.o: src/print_posle_prov.c src/geometry.h src/figure.h
 	$(OBJ)
 
+	
+bin/geometry-test: build/test/test.o build/test/circle_intersects.o
+	g++ $(CFLAGS) -I thirtdparty/catch2  $^ -o $@
 
+build/test/test.o: test/test.c test/geometry.h test/figure.h 
+	$(TEST)
+
+build/test/circle_intersects.o: test/circle_intersects-test.c test/geometry.h test/figure.h 
+	$(TEST)		
 
 
 
