@@ -118,7 +118,17 @@ build/test/getMin.o: test/getMin-test.c test/geometry.h test/figure.h
 build/test/getMax.o: test/getMax-test.c test/geometry.h test/figure.h
 	$(TEST)
 
+build/test/prijectionsIntersect.o: test/prijectionsIntersect-test.c test/geometry.h test/figure.h 
+	$(TEST)
 
+build/test/getSlope.o: test/getSlope-test.c test/geometry.h test/figure.h 
+	$(TEST)
+
+build/test/getYIntercept.o: test/getYIntercept-test.c test/geometry.h test/figure.h 
+	$(TEST)
+
+build/test/getCos.o: test/getCos-test.c test/geometry.h test/figure.h 
+	$(TEST)
 
 clean:
 	
