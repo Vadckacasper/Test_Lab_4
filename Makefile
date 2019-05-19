@@ -83,7 +83,7 @@ build/src/print_posle_prov.o: src/print_posle_prov.c src/geometry.h src/figure.h
 	$(OBJ)
 
 
-bin/geometry-test: build/test/test.o build/test/circle_intersects.o build/test/printCircle.o
+bin/geometry-test: build/test/test.o build/test/circle_intersects.o build/test/printCircle.o build/test/printPoligon.o build/test/printTriangle.o
 	g++ $(CFLAGS) -I thirtdparty/catch2  $^ -o $@
 
 build/test/test.o: test/test.c test/geometry.h test/figure.h 
@@ -95,6 +95,11 @@ build/test/circle_intersects.o: test/circle_intersects-test.c test/geometry.h te
 build/test/printCircle.o: test/printCircle-test.c test/geometry.h test/figure.h
 	$(TEST)
 
+build/test/printPoligon.o: test/printPoligon-test.c test/geometry.h test/figure.h 
+	$(TEST)
+
+build/test/printTriangle.o: test/printTriangle-test.c test/geometry.h test/figure.h 
+	$(TEST)
 
 
 clean:
